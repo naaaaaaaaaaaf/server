@@ -96,6 +96,7 @@ module.exports = {
 					deviceScaleFactor: options.viewport.scale
 				})
 			]);
+ 			await this.delay(100);
 		}
 		let fileName = test.test.title
 		if (route !== undefined) {
@@ -113,7 +114,7 @@ module.exports = {
 		} catch (err) {
 			failed = err;
 		}
-		await this.delay(500);
+		await this.delay(100);
 		await Promise.all([
 			this.pageBase.screenshot({
 				path: `${this._outputDirectory}/${fileName}.base.png`,
